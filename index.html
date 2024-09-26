@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <title>Document</title>
-    <script></script>
 </head>
 <body>
     <div class="outer-container">
@@ -16,16 +15,26 @@
                     <div class="right round-corner"></div>
                 </div>
                 <div class="top-left-two flex-container">
-                    <div class="left round-corner"></div>
+                    <div class="left round-corner" id="top-left-two-left"></div>
                     <div class="right round-corner"></div>
                 </div>
             </div>
-            <div class="top-right round-corner"></div>
+            <div class="top-right round-corner" id="top-right"></div>
         </div>
         <div class="container-two flex-container">
-            <div class="bottom-left round-corner"></div>
+            <div class="bottom-left round-corner" id="bottom-left"></div>
             <div class="bottom-right round-corner"></div>
         </div>
     </div>
+
+    <!-- Popup div -->
+    <div id="popup" class="popup">
+        <div class="popup-content round-corner">
+            <span id="close-popup" class="close-popup">&times;</span>
+            <p>This is a popup!</p>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
