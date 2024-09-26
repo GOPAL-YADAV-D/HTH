@@ -1,4 +1,38 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+    // Simulate user login status
+    var userLoggedIn = true; // Change this to false to simulate a logged-out user
+
+    // Function to check if the user is logged in
+    function isLoggedIn() {
+        return userLoggedIn;
+    }
+
+    // Function to fetch user name from the backend
+    function fetchUserName() {
+        // Simulate fetching user name from the backend
+        // Replace this with actual fetch call to your backend
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve("John Doe");
+            }, 1000);
+        });
+    }
+
+    // Get the main content and login container divs
+    var mainContent = document.getElementById('main-content');
+    var loginContainer = document.getElementById('login-container');
+    var userNameSpan = document.getElementById('user-name');
+
+    // Conditionally display the main content or login container
+    if (isLoggedIn()) {
+        mainContent.style.display = 'block';
+        fetchUserName().then((userName) => {
+            userNameSpan.textContent = userName;
+        });
+    } else {
+        loginContainer.style.display = 'block';
+    }
+
     // Get the popup
     var popup = document.getElementById("popup");
 

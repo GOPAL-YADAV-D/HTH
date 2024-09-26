@@ -7,23 +7,46 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="outer-container">
-        <div class="container-one flex-container">
-            <div class="top-left">
-                <div class="top-left-one flex-container">
-                    <div class="left round-corner"></div>
-                    <div class="right round-corner"></div>
+    <!-- Main content -->
+    <div id="main-content" style="display: none;">
+        <div class="outer-container">
+            <div class="container-one flex-container">
+                <div class="top-left">
+                    <div class="top-left-one flex-container">
+                        <div class="left round-corner">
+                            <img src="./assets/IEEE Logo.svg" alt="IEEE-LOGO">
+                        </div>
+                        <div class="right round-corner">
+                            <h2>Hi, <span id="user-name"></span></h2>
+                        </div>
+                    </div>
+                    <div class="top-left-two flex-container">
+                        <div class="left round-corner">
+                            <h2>KNOW YOUR TEAM</h2>
+                        </div>
+                        <div class="right round-corner"></div>
+                    </div>
                 </div>
-                <div class="top-left-two flex-container">
-                    <div class="left round-corner" id="top-left-two-left"></div>
-                    <div class="right round-corner"></div>
-                </div>
+                <div class="top-right round-corner"></div>
             </div>
-            <div class="top-right round-corner" id="top-right"></div>
+            <div class="container-two flex-container">
+                <div class="bottom-left round-corner" id="bottom-left"></div>
+                <div class="bottom-right round-corner"></div>
+            </div>
         </div>
-        <div class="container-two flex-container">
-            <div class="bottom-left round-corner" id="bottom-left"></div>
-            <div class="bottom-right round-corner"></div>
+    </div>
+
+    <!-- Login/Signup container -->
+    <div class="container" id="login-container" style="display: none;">
+        <div class="header">
+            <img src="ieee-logo.png" alt="IEEE Logo" class="logo">
+        </div>
+        <div class="content">
+            <h1>HACK <span>THE</span> HACKATHON</h1>
+        </div>
+        <div class="actions">
+            <a href="#" class="btn">Log In</a>
+            <a href="#" class="btn">Sign Up</a>
         </div>
     </div>
 
