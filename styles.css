@@ -7,6 +7,10 @@
     font-family: "Roboto", sans-serif;
 }
 
+body{
+    background: linear-gradient(to top right, #000030, black);
+}
+
 /* common classes */
 .flex-container {
     display: flex;
@@ -33,7 +37,7 @@ h2{
     height: 100vh;
     width: 95vw;
     margin: auto;
-    background-color: antiquewhite;
+    background: linear-gradient(to top right, #000030, black);
 }
 
 .container-one,
@@ -68,10 +72,12 @@ h2{
 .top-right,
 .bottom-right {
     width: 30%;
+    background: linear-gradient(to top right, #032A5D, #023C7D, #027BD8);
 }
 
 .bottom-left {
     width: 70%;
+    background: linear-gradient(to top right, #032A5D, #023C7D, #027BD8);
 }
 
 .top-left-one,
@@ -90,6 +96,7 @@ h2{
 .top-left-one .left,
 .top-left-two .left {
     height: 100%;
+    background: linear-gradient(to top right, #032A5D, #023C7D, #027BD8);
 }
 
 .top-left-one .left {
@@ -106,6 +113,7 @@ h2{
 .top-left-one .right,
 .top-left-two .right {
     height: 100%;
+    background: linear-gradient(to top right, #032A5D, #023C7D, #027BD8);
 }
 
 .top-left-one .right {
@@ -242,7 +250,7 @@ h2{
 }
 
 .popup-content {
-    background-color: #fefefe;
+    background: linear-gradient(to top right, #032A5D, #023C7D, #027BD8);
     margin:2% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // Simulate user login status and team status
-    var userLoggedIn =false; 
+    var userLoggedIn =true; 
     var userInTeam = true; 
 
     // Function to check if the user is logged in
