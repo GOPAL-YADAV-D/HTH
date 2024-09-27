@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // Simulate user login status and team status
-    var userLoggedIn = true; 
-    var userInTeam = false; 
+    var userLoggedIn =false; 
+    var userInTeam = true; 
 
     // Function to check if the user is logged in
     function isLoggedIn() {
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             userNameSpan.textContent = userName;
         });
     } else {
-        loginContainer.style.display = 'block';
+        loginContainer.style.display = 'flex';
     }
 
     // Get the popup
@@ -80,10 +80,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if (isLoggedIn() && isInTeam()) {
                 fetchTeamMembers().then((teamMembers) => {
                     let teamContent = `
-                        <div class="header">
+                <div class="popup-wrapper"> 
+                        <div class="header team-header">
                             <h1>Your Team</h1>
                         </div>
-                        <div class="content">
+                        <div class="content team-content">
                             <ul>
                     `;
                     teamMembers.forEach(member => {
@@ -91,9 +92,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     });
                     teamContent += `
                             </ul>
-                            <input type="text" id="ppt-link" placeholder="Enter PPT link">
-                            <button id="submit-ppt">Submit</button>
+                            <input type="text" class="ppt-link-input" id="ppt-link" placeholder="Enter PPT link">
+                            <button id="submit-ppt" class="submit-ppt-btn">Submit</button>
                         </div>
+                </div>
                     `;
                     showPopup(teamContent);
 
@@ -109,24 +111,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 });
             } else {
                 showPopup(`
-                    <div class="header">
-                        <h1>Create or Join a Team</h1>
-                    </div>
-                    <div class="content">
-                        <a href="#" id="create-team" class="btn">Create Team</a>
-                        <a href="#" id="join-team" class="btn">Join Team</a>
+                    <div class="popup-wrapper"> 
+                        <div class="header">
+                            <h1>Create or Join a Team</h1>
+                        </div>
+                        <div class="content">
+                            <a href="#" id="create-team" class="btn">Create Team</a>
+                            <a href="#" id="join-team" class="btn">Join Team</a>
+                        </div>
                     </div>
                 `);
 
                 // Add event listener for "Create Team" button
                 document.getElementById('create-team').onclick = function() {
                     showPopup(`
-                        <div class="header">
-                            <h1>Create a Team</h1>
-                        </div>
-                        <div class="content">
-                            <input type="text" id="team-name" placeholder="Enter team name">
-                            <button id="submit-team">Create Team</button>
+                        <div class="popup-wrapper">
+                            <div class="header">
+                                <h1>Create a Team</h1>
+                            </div>
+                            <div class="content">
+                                <input type="text" id="team-name" placeholder="Enter team name">
+                                <button id="submit-team">Create Team</button>
+                             </div>
                         </div>
                     `);
 
@@ -144,12 +150,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 // Add event listener for "Join Team" button
                 document.getElementById('join-team').onclick = function() {
                     showPopup(`
-                        <div class="header">
-                            <h1>Join a Team</h1>
-                        </div>
-                        <div class="content">
-                            <input type="text" id="team-code" placeholder="Enter team code">
-                            <button id="submit-code">Join Team</button>
+                        <div class="popup-wrapper">
+                            <div class="header">
+                                <h1>Join a Team</h1>
+                            </div>
+                            <div class="content">
+                                <input type="text" id="team-code" placeholder="Enter team code">
+                                <button id="submit-code">Join Team</button>
+                            </div>
                         </div>
                     `);
 
