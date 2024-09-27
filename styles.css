@@ -75,9 +75,23 @@ h2{
     background: linear-gradient(to top right, #032A5D, #023C7D, #027BD8);
 }
 
+.top-right{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
 .bottom-left {
     width: 70%;
     background: linear-gradient(to top right, #032A5D, #023C7D, #027BD8);
+    font-size: 3rem;
+    font-weight: 500;
+    text-align: left;
+    padding:1.5% 6%;
+
+    span{
+        color:#FA0863
+    }
 }
 
 .top-left-one,
@@ -122,7 +136,7 @@ h2{
     padding-left: 5%;
     h2{
         text-align: start;
-        font-size: 4rem;
+        font-size: 3.8rem;
     }
 
 }
@@ -153,6 +167,11 @@ h2{
 }
 
 @media (max-width:720px){
+
+    .problems li p{
+
+        font-size: 1.2rem;
+    }
 
     .outer-container{
         width:100%;
@@ -210,6 +229,10 @@ h2{
         .top-right{
             height: 70vh;
             width:100%;
+
+            h2{
+                font-size: 2.5rem ;
+            }
         }
     }
 
@@ -229,16 +252,16 @@ h2{
 }
 
 .popup {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
 }
 
 .popup-wrapper {
@@ -255,7 +278,8 @@ h2{
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    height:90vh; /* Could be more or less, depending on screen size */
+    max-height:90vh; /* Could be more or less, depending on screen size */
+    overflow-y: auto;
 }
 
 .close-popup {
@@ -352,4 +376,32 @@ h2{
             height:70%;
         }
     }
+}
+
+
+
+/* Custom scrollbar styles */
+.popup-content::-webkit-scrollbar {
+    width: 12px; 
+}
+
+.popup-content::-webkit-scrollbar-track {
+    background: #023C7D; 
+    border-radius: 10px; 
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background: #FA0863; 
+    border-radius: 10px;
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+    background: #fc2779; 
+}
+
+
+.problems{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
 }

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     // Simulate user login status and team status
-    var userLoggedIn =true; 
+    var userLoggedIn = true; 
     var userInTeam = true; 
 
     // Function to check if the user is logged in
@@ -177,27 +177,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     if (topRight) {
         topRight.onclick = function() {
-            showPopup(`
+            let problemsContent = `
                 <div class="header">
-                    <h1>Top Right Content</h1>
+                    <h1>Problems</h1>
                 </div>
                 <div class="content">
-                    <p>This is the content for the top right div.</p>
+                    <ul class="problems">
+            `;
+            jsonData.forEach(problem => {
+                problemsContent += `
+                    <li>
+                        <h2>${problem.topic}</h2>
+                        <p>${problem.description}</p>
+                    </li>
+                `;
+            });
+            problemsContent += `
+                    </ul>
                 </div>
-            `);
-        }
-    }
-
-    if (bottomLeft) {
-        bottomLeft.onclick = function() {
-            showPopup(`
-                <div class="header">
-                    <h1>Bottom Left Content</h1>
-                </div>
-                <div class="content">
-                    <p>This is the content for the bottom left div.</p>
-                </div>
-            `);
+            `;
+            showPopup(problemsContent);
         }
     }
 
